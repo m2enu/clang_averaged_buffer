@@ -13,6 +13,8 @@ BIN_ROOT		:= $(PRJ_ROOT)/$(BIN_DIR)
 
 # Source files
 SRCS			:= \
+	$(SRC_ROOT)/iaveraged_buffer.c \
+	$(SRC_ROOT)/simple_averaged_buffer.c \
 
 # Include directories
 INC_DIRS        := \
