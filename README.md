@@ -16,7 +16,7 @@
 # Author / License
 
 - m2enu
-- This software is under [MIT License](https://github.com/m2enu/clang_averaged_buffer/blob/main/LICENS)
+- This software is under [MIT License](https://github.com/m2enu/clang_averaged_buffer/blob/main/LICENSE)
 
 # Installation
 
@@ -28,9 +28,12 @@
 - The APIs of `IAveragedBuffer` interface must pass the pointer of itself as the 1st argument like below.
 
 ```c
+/* Create instance */
 IAveragedBuffer* pThis = AveragedBufferCreate(...);
-AveragedBufferAdd(pThis, 100);  /* Add new value: pass `IAveragedBuffer*` to 1st argument */
-AveragedBufferType value = AveragedBufferAverage(pThis);    /* Acquire the average: pass `IAveragedBuffer*` to 1st argument */
+/* Add new value: pass `IAveragedBuffer*` to 1st argument */
+AveragedBufferAdd(pThis, 100);
+/* Acquire the average: pass `IAveragedBuffer*` to 1st argument */
+AveragedBufferType value = AveragedBufferAverage(pThis);
 ```
 
 ## Create the instance
@@ -44,7 +47,9 @@ AveragedBufferType value = AveragedBufferAverage(pThis);    /* Acquire the avera
 ```c
 /**
  * @brief   Configuration of the Averaged Buffer
- * @attention   The entity of configuration must be placed in the static area. The buffer might cause an unexpected behavior if configuration is placed in the stack area.
+ * @attention   The entity of configuration must be placed in the static area.
+ *              The buffer might cause an unexpected behavior if configuration
+ *              is placed in the stack area.
  */
 static const AveragedBufferConfig configForSimple = {
     AVERAGED_BUFFER_ALGO_SIMPLE,    /* Averaging algorithm */
@@ -65,7 +70,8 @@ static IAveragedBuffer* pWeighted;
 void func_initialize(void)
 {
     /** Configuration for weighted averaging buffer
-     * @attention   The buffer might cause an unexpected behavior if you remove `static` at next line.
+     * @attention   The buffer might cause an unexpected behavior if
+     *              you remove `static` at next line.
      */
     static const AveragedBufferConfig configForWeighted = {
         AVERAGED_BUFFER_ALGO_WEIGHTED,
