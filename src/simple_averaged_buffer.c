@@ -1,6 +1,6 @@
 /**
- * @file    iaveraged_buffer_simple.c
- * @brief   Simple averaged buffer
+ * @file    simple_averaged_buffer.c
+ * @brief   Implementation for Simple Averaged Buffer
  * @author  m2enu
  * @par     License
  * https://github.com/m2enu/clang_averaged_buffer/blob/main/LICENSE
